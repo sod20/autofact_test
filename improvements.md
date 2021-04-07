@@ -8,11 +8,11 @@ Para la arquitectura del sistema, me base en el complemento Jetstram que provee 
 
 ## Seguridad
 
-Una mejora sustancial a la solución es agregar autenticación de 2 pasos, provista por Jetstream, esto aumenta la fiabilidad del sistema de autenticación de usuarios. 
+Una mejora sustancial a la solución es agregar autenticación de 2 pasos, provista por Jetstream, esto aumenta la fiabilidad del sistema de autenticación de usuarios. Se puede modificar el api_token para utilizar algo más robusto como JWT o autenticación directa en cada una de las peticiones.
 
 ## Escalabilidad
 
-En cuanto a escalabilidad no hay mucho que agregar, sólo comentar que se pueden modificar las tablas mediante migraciones, como la última que agrega a la tabla "users" el campo "api_token" para el uso de la API.
+En cuanto a escalabilidad no hay mucho que agregar, sólo comentar que se pueden modificar las tablas mediante migraciones, como la última que agrega a la tabla "users" el campo "api_token" para el uso de la API. En caso de necesitar adjuntar código desde otra fuente, si el framework de origen es Laravel o Lumen al igual que este, se pueden mezclar los archivos que se encuentran dentro de la carpeta "/app" de ambas aplicaciones sin mayores inconvenientes.
 
 ## Rendimiento
 
@@ -20,7 +20,7 @@ En caso de continuar solamente como una API, se recomienda modificar el framewor
 
 ## Diseño
 
-El diseño puede ser mejorado ampliamente con mejores habilidades de diseño de interfaces web, se pueden modificar cada una de las interfaces presentes actualizando el código presente en "resources/views".
+El diseño puede ser mejorado ampliamente con mejores habilidades de diseño de interfaces web, se pueden modificar cada una de las interfaces presentes actualizando el código presente en "resources/views". También se puede acoplar una aplicación externa que pueda ser un framework como Angular o librerias como React para mejorar la interacción con el usuario sin afectar en mayor medida al rendimiento.
 
 ## Despliegue
 
