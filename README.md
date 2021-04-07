@@ -26,6 +26,7 @@ To run the program and have default data for admin's chart, you must run migrati
 
 ```
 php artisan migrate
+php artisan db:seed
 ```
 
 ### Run Application
@@ -39,7 +40,34 @@ You can register on the main page by clicking register button but also can use d
 ```
 email: mrtest1@gmail.com
 password: password11
+api_token: 606e12b683121-20148129
 ```
+
+### Test API-REST
+
+User has a generated attribute in order to user the API, all users can use it. To do that the user has to specify his api_token on the request header, as it is show in the following:
+
+```
+curl --location --request GET 'serverURL/api/quiz/all' --header 'api_token: 606e12b683121-20148129'
+```
+
+There is only 3 API endpoints to intereact with at the moment, which are to create a quiz, get last and get all (only admin can get all quizzes).
+```
+GET 'serverURL/api/quiz/last'
+GET 'serverURL/api/quiz/all'
+POST 'serverURL/api/quiz'
+```
+
+The data that must be specified in create quiz endpoint is (for page_reliability : 1= Yes, 2= No, 3= So so):
+```
+{
+    "note": "Some note",
+    "page_load_speed": "5",
+    "page_reliability": "1"
+}
+```
+
+### You will find suggested improvements to the solution in improvements.md
 
 ## Contributing
 

@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Mr Test',
             'email' => 'mrtest1@gmail.com',
             'password' => Hash::make('password11'),
+            'api_token' => '606e12b683121-20148129',
             'role' => 'admin'
         ]);
         for($u = 0 ; $u < 30 ; $u++) {
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
                 'name' => Str::random(10),
                 'email' => Str::random(10).'@gmail.com',
                 'password' => Hash::make('password55'),
+                'api_token' => uniqid() . '-' . rand(10000000, 99999999), 
             ]);
         }
         for($q = 0 ; $q < 60 ; $q++) {
